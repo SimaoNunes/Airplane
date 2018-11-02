@@ -31,9 +31,22 @@ function createScene() {
 
     camera = camera1;
 
+    var geometry = new THREE.SphereBufferGeometry( 50, 50, 50 );
+
+    var wireframe = new THREE.WireframeGeometry( geometry );
+
+    var line = new THREE.LineSegments( wireframe );
+    line.material.depthTest = false;
+    line.material.opacity = 0.25;
+    line.material.transparent = true;
+
+    line.position.y = 30;
+
+    scene.add( line );
+
     scene.add(camera);
     scene.add(table);
-    scene.add(lights)
+    scene.add(lights);
 }
 
 function createCamera1() {
