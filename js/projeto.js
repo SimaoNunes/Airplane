@@ -24,7 +24,7 @@ function createScene() {
     scene = new THREE.Scene();
     scene.add(new THREE.AxisHelper(20));
 
-    airplane  = new Airplane(0, 37, 0);
+    airplane  = new Airplane(0, 0, 0);
     lights = new Lights(40,30,40);
     
     createCamera1();

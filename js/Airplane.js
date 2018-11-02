@@ -7,7 +7,7 @@ class Airplane extends THREE.Object3D{
                                 new THREE.Vector3(-10,-10,0),
                                 new THREE.Vector3(10,-10,0));
         geometry.faces.push(new THREE.Face3(0,1,2));
-        geometry.computeBoundingSphere();
+        geometry.computeFaceNormals();
     }
 
     constructor(x, y, z){
