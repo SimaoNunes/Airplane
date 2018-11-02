@@ -6,7 +6,7 @@ var camera1; // diferentes tipos de cameras
 
 var geometry, material, mesh;
 
-var table, lights; // diferentes objetos a desenhar
+var airplane, lights; // diferentes objetos a desenhar
 
 
 function onResize() {
@@ -24,29 +24,16 @@ function createScene() {
     scene = new THREE.Scene();
     scene.add(new THREE.AxisHelper(20));
 
-    table  = new Table(0, 37, 0);
+    airplane  = new Airplane(0, 37, 0);
     lights = new Lights(40,30,40);
     
     createCamera1();
 
     camera = camera1;
 
-    var geometry = new THREE.SphereBufferGeometry( 50, 50, 50 );
-
-    var wireframe = new THREE.WireframeGeometry( geometry );
-
-    var line = new THREE.LineSegments( wireframe );
-    line.material.depthTest = false;
-    line.material.opacity = 0.25;
-    line.material.transparent = true;
-
-    line.position.y = 30;
-
-    scene.add( line );
-
     scene.add(camera);
-    scene.add(table);
-    scene.add(lights);
+    scene.add(airplane);
+    scene.add(lights)
 }
 
 function createCamera1() {
