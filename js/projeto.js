@@ -25,7 +25,7 @@ function createScene() {
     scene.add(new THREE.AxisHelper(20));
 
     airplane  = new Airplane(0, 0, 0);
-    lights = new Lights(40,30,40);
+    lights = new Lights(40,20,40);
     
     createCamera1();
     createCamera2();
@@ -45,8 +45,8 @@ function createCamera1() {
     camera1 = new THREE.OrthographicCamera(
         window.innerWidth / - 10,
         window.innerWidth/ 10,
-        (window.innerHeight / 10) + 50,
-        (window.innerHeight / - 10) + 50,
+        (window.innerHeight / 10) + 30,
+        (window.innerHeight / - 10) + 30,
         -1000,
         1000
     );
@@ -61,8 +61,8 @@ function createCamera2() {
     camera2 = new THREE.OrthographicCamera(
         window.innerWidth / - 10,
         window.innerWidth/ 10,
-        (window.innerHeight / 10) + 50,
-        (window.innerHeight / - 10) + 50,
+        (window.innerHeight / 10) + 30,
+        (window.innerHeight / - 10) + 30,
         -1000,
         1000
     );
@@ -77,8 +77,8 @@ function createCamera3() {
     camera3 = new THREE.OrthographicCamera(
         window.innerWidth / - 10,
         window.innerWidth/ 10,
-        (window.innerHeight / 10) + 50,
-        (window.innerHeight / - 10) + 50,
+        (window.innerHeight / 10) + 40,
+        (window.innerHeight / - 10) + 40,
         -1000,
         1000
     );
@@ -93,8 +93,8 @@ function createCamera4() {
     camera4 = new THREE.OrthographicCamera(
         window.innerWidth / - 10,
         window.innerWidth/ 10,
-        (window.innerHeight / 10) + 50,
-        (window.innerHeight / - 10) + 50,
+        (window.innerHeight / 10) + 20,
+        (window.innerHeight / - 10) + 20,
         -1000,
         1000
     );
