@@ -80,10 +80,11 @@ class Airplane extends THREE.Object3D{
                                 new THREE.Vector3(50,-10,10));
         geometry.faces.push(new THREE.Face3(0,1,2));
         geometry.computeBoundingSphere();
+        
         var material = new THREE.MeshBasicMaterial({ color: 0x4286f4, wireframe: true });
         mesh = new THREE.Mesh(geometry, material);
         mesh.position.set(x, y, z);
-        this.add( mesh );
+        this.add(mesh);
     }
 
     constructor(x, y, z){
