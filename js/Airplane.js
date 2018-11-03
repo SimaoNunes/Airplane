@@ -10,11 +10,11 @@ class Airplane extends THREE.Object3D{
         for(i=-40; i<40; i+=2){
             bottom.vertices.push(   new THREE.Vector3(i,0,10),
                                     new THREE.Vector3(i,0,-10),
-                                    new THREE.Vector3(i+2,0,-10));
+                                    new THREE.Vector3(i+1,0,-10));
             bottom.faces.push(new THREE.Face3(c,c+1,c+2));
             bottom.vertices.push(   new THREE.Vector3(i,0,10),
-                                    new THREE.Vector3(i+2,0,-10),
-                                    new THREE.Vector3(i+2,0,10));
+                                    new THREE.Vector3(i+1,0,-10),
+                                    new THREE.Vector3(i+1,0,10));
             bottom.faces.push(new THREE.Face3(c+3,c+4,c+5));
             bottom.computeFaceNormals();
             c+=6;
@@ -29,11 +29,11 @@ class Airplane extends THREE.Object3D{
         for(i=-10; i<10; i+=2){
             back.vertices.push( new THREE.Vector3(-40,0,i),
                                 new THREE.Vector3(-40,20,i),
-                                new THREE.Vector3(-40,0,i+2));
+                                new THREE.Vector3(-40,0,i+1));
             back.faces.push(new THREE.Face3(c+1,c,c+2));
-            back.vertices.push( new THREE.Vector3(-40,20,i+2),
+            back.vertices.push( new THREE.Vector3(-40,20,i+1),
                                 new THREE.Vector3(-40,20,i),
-                                new THREE.Vector3(-40,0,i+2));
+                                new THREE.Vector3(-40,0,i+1));
             back.faces.push(new THREE.Face3(c+3,c+4,c+5));
             back.computeFaceNormals();
             c+=6;
