@@ -2,7 +2,7 @@ class Airplane extends THREE.Object3D{
     
     addAirplaneFuselage(x,y,z) {
         'use strict';
-        var material = new THREE.MeshBasicMaterial({ color: 0x6286f4});
+        var material = new THREE.MeshBasicMaterial({color: 0x6286f4, wireframe: false });
         var i;
         var c = 0;
 
@@ -30,7 +30,7 @@ class Airplane extends THREE.Object3D{
             back.vertices.push( new THREE.Vector3(-40,0,i),
                                 new THREE.Vector3(-40,20,i),
                                 new THREE.Vector3(-40,0,i+2));
-            back.faces.push(new THREE.Face3(c,c+1,c+2));
+            back.faces.push(new THREE.Face3(c+1,c,c+2));
             back.vertices.push( new THREE.Vector3(-40,20,i+2),
                                 new THREE.Vector3(-40,20,i),
                                 new THREE.Vector3(-40,0,i+2));
@@ -47,7 +47,7 @@ class Airplane extends THREE.Object3D{
         top.vertices.push(  new THREE.Vector3(-40,20,10),
                             new THREE.Vector3(-40,20,-10),
                             new THREE.Vector3(40,0,10));
-        top.faces.push(new THREE.Face3(0,1,2));
+        top.faces.push(new THREE.Face3(0,2,1));
         top.vertices.push(  new THREE.Vector3(40,0,-10),
                             new THREE.Vector3(-40,20,-10),
                             new THREE.Vector3(40,0,10));
@@ -59,15 +59,16 @@ class Airplane extends THREE.Object3D{
         
 
         var side = new THREE.Geometry();
-        c = 0;
-        for(i=-1;i<2;i+=2){
-            side.vertices.push( new THREE.Vector3(-40,0,10*i),
-                                new THREE.Vector3(-40,20,10*i),
-                                new THREE.Vector3(40,0,10*i));
-            side.faces.push(new THREE.Face3(c,c+1,c+2));
-            side.computeFaceNormals();
-            c+=3;
-        }
+        side.vertices.push( new THREE.Vector3(-40,0,10),
+                            new THREE.Vector3(-40,20,10),
+                            new THREE.Vector3(40,0,10));
+        side.faces.push(new THREE.Face3(1,0,2));
+        side.computeFaceNormals();
+        side.vertices.push( new THREE.Vector3(-40,0,-10),
+                            new THREE.Vector3(-40,20,-10),
+                            new THREE.Vector3(40,0,-10));
+        side.faces.push(new THREE.Face3(3,4,5));
+        side.computeFaceNormals();
         mesh = new THREE.Mesh(side, material);
         mesh.position.set(x, y, z);
         this.add(mesh);

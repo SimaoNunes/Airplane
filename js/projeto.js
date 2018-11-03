@@ -123,14 +123,14 @@ function createCamera5() {
 function onKeyDown(e) {
     'use strict';
     switch (e.keyCode) {
-    // case 65: //A
-    // case 97: //a
-    //     scene.traverse(function (node) {
-    //         if (node instanceof THREE.Mesh) {
-    //             node.material.wireframe = !node.material.wireframe;
-    //         }
-    //     });
-    //     break;
+    case 65: //A
+    case 97: //a
+        scene.traverse(function (node) {
+            if (node instanceof THREE.Mesh) {
+                node.material.wireframe = !node.material.wireframe;
+            }
+        });
+        break;
     case 69:  //E
     case 101: //e
         scene.traverse(function (node) {

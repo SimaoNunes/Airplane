@@ -12,7 +12,7 @@ class Lights extends THREE.Object3D{
     addLampBall(x, y, z){
         'use strict';
         var geometry = new THREE.SphereGeometry( 5, 32, 32 );
-        var material = new THREE.MeshBasicMaterial({ color: 0xfaffaa, wireframe: false });
+        var material = new THREE.MeshBasicMaterial({ color: 0xfaffaa, wireframe: true });
         mesh = new THREE.Mesh(geometry, material);
         mesh.position.set(x, y+63, z);
         this.add( mesh );
