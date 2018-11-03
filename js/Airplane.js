@@ -58,7 +58,7 @@ class Airplane extends THREE.Object3D{
         this.add(mesh);
         
 
-        for(i=-40; i<40; i++){
+        for(i=-40; i<40; i+=2){
             var side = new THREE.Geometry();
             side.vertices.push( new THREE.Vector3(-40,0,10),
                                 new THREE.Vector3(-40,20,10),
