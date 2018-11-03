@@ -6,7 +6,7 @@ var camera1, camera2, camera3, camera4, camera5; // diferentes tipos de cameras
 
 var geometry, material, mesh;
 
-var airplane, lights; // diferentes objetos a desenhar
+var airplane, lights, sun; // diferentes objetos a desenhar
 
 
 function onResize() {
@@ -38,6 +38,11 @@ function createScene() {
     scene.add(camera);
     scene.add(airplane);
     scene.add(lights)
+
+    var light = new THREE.AmbientLight( 0xffffff , 0.5); // soft white light
+    scene.add( light );
+
+
 }
 
 function createCamera1() {
