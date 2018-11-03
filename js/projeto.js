@@ -47,8 +47,8 @@ function createCamera1() {
         1000
     );
     
-    camera1.position.x = 40;
-    camera1.position.y = 10;
+    camera1.position.x = 0;
+    camera1.position.y = 0;
     camera1.position.z = 40;
 }
 
@@ -64,9 +64,38 @@ function onKeyDown(e) {
             }
         });
         break;
-    case 49: // 1
+    case 50: // 1
         camera = camera1;
+        camera1.position.x = 60;
+        camera1.position.y = 20;
+        camera1.position.z = 40;
         break;
+    case 49: 
+        camera.position.x = 0;
+        camera.position.y = 0;
+        camera.position.z = 40;
+        break;
+    case 51:
+        camera.position.x = 40;
+        camera.position.y = 0;
+        camera.position.z = 0;
+        break;
+    case 52:
+        camera.position.x = 0;
+        camera.position.y = 40;
+        camera.position.z = 40;
+        break;
+    case 37:
+        airplane.rotation.x += 0.1;
+        break;
+    case 39: 
+        airplane.rotation.x -= 0.1;
+        break;
+    case 38:
+        airplane.rotation.z +=0.1;
+        break;
+    case 40:
+        airplane.rotation.z -=0.1;
     }
 }
 
