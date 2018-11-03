@@ -39,7 +39,7 @@ function createScene() {
     scene.add(airplane);
     scene.add(lights)
 
-    var light = new THREE.AmbientLight( 0xffffff , 0.5); // soft white light
+    var light = new THREE.AmbientLight( 0xffffff , 5); // soft white light
     scene.add( light );
 
 
