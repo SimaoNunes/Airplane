@@ -2,7 +2,7 @@ class Airplane extends THREE.Object3D{
     
     addAirplaneFuselage(x,y,z) {
         'use strict';
-        var material = new THREE.MeshBasicMaterial({color: 0x6286f4, wireframe:  true });
+        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe:  true });
         var i;
         var c = 0;
 
@@ -89,7 +89,7 @@ class Airplane extends THREE.Object3D{
 
     addWingRight(x,y,z){
         'use strict';
-        var material = new THREE.MeshBasicMaterial({ color: 0x6286f4, wireframe: false });
+        var material = new THREE.MeshLambertMaterial({ color: 0x6286f4, wireframe: false });
         var geometry = new THREE.Geometry();
         geometry.vertices.push( new THREE.Vector3(15,4,10),          //Asa de cima
                                 new THREE.Vector3(-5,4,10),
@@ -137,7 +137,7 @@ class Airplane extends THREE.Object3D{
 
     addWingLeft(x,y,z){
         'use strict';
-        var material = new THREE.MeshBasicMaterial({ color: 0x6286f4, wireframe: false });
+        var material = new THREE.MeshLambertMaterial({ color: 0x6286f4, wireframe: false });
         var geometry = new THREE.Geometry();
         geometry.vertices.push( new THREE.Vector3(15,4,-10),            //Asa de cima
                                 new THREE.Vector3(-5,4,-10),
