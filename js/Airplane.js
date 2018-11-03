@@ -2,7 +2,7 @@ class Airplane extends THREE.Object3D{
     
     addAirplaneFuselage(x,y,z) {
         'use strict';
-        var material = new THREE.MeshBasicMaterial({color: 0x6286f4, wireframe: false });
+        var material = new THREE.MeshBasicMaterial({color: 0x6286f4, wireframe: true });
         var i;
         var c = 0;
 
@@ -63,7 +63,6 @@ class Airplane extends THREE.Object3D{
                             new THREE.Vector3(-40,20,10),
                             new THREE.Vector3(40,0,10));
         side.faces.push(new THREE.Face3(1,0,2));
-        side.computeFaceNormals();
         side.vertices.push( new THREE.Vector3(-40,0,-10),
                             new THREE.Vector3(-40,20,-10),
                             new THREE.Vector3(40,0,-10));
@@ -77,13 +76,17 @@ class Airplane extends THREE.Object3D{
     }
 
 
-    addWing1(x,y,z){
+    addWingRight(x,y,z){
         'use strict';
         var geometry = new THREE.Geometry();
-        geometry.vertices.push( new THREE.Vector3(10,-5,10),
-                                new THREE.Vector3(-10,-5,10),
-                                new THREE.Vector3(-25,-5,60));
+        geometry.vertices.push( new THREE.Vector3(10,4,10),
+                                new THREE.Vector3(-10,4,10),
+                                new THREE.Vector3(-25,4,60));
         geometry.faces.push(new THREE.Face3(0,1,2));
+        geometry.vertices.push( new THREE.Vector3(-30,4,60),
+                                new THREE.Vector3(-10,4,10),
+                                new THREE.Vector3(-25,4,60));
+        geometry.faces.push(new THREE.Face3(4,3,5));
         geometry.computeFaceNormals();
         var material = new THREE.MeshBasicMaterial({ color: 0x4286f4, wireframe: true });
         mesh = new THREE.Mesh(geometry, material);
@@ -91,13 +94,18 @@ class Airplane extends THREE.Object3D{
         this.add( mesh );
     }
 
-    addWing2(x,y,z){
+
+    addWingLeft(x,y,z){
         'use strict';
         var geometry = new THREE.Geometry();
-        geometry.vertices.push( new THREE.Vector3(10,-5,-10),
-                                new THREE.Vector3(-10,-5,-10),
-                                new THREE.Vector3(-25,-5,-60));
-        geometry.faces.push(new THREE.Face3(0,1,2));
+        geometry.vertices.push( new THREE.Vector3(10,4,-10),
+                                new THREE.Vector3(-10,4,-10),
+                                new THREE.Vector3(-25,4,-60));
+        geometry.faces.push(new THREE.Face3(0,2,1));
+        geometry.vertices.push( new THREE.Vector3(-10,4,-10),
+                                new THREE.Vector3(-25,4,-60),
+                                new THREE.Vector3(-30,4,-60));
+        geometry.faces.push(new THREE.Face3(3,4,5));
         geometry.computeFaceNormals();
         var material = new THREE.MeshBasicMaterial({ color: 0x4286f4, wireframe: true });
         mesh = new THREE.Mesh(geometry, material);
@@ -105,20 +113,6 @@ class Airplane extends THREE.Object3D{
         this.add( mesh );
     }
 
-    addFrontLine(x,y,z){
-        'use strict';
-        var geometry = new THREE.Geometry();
-        geometry.vertices.push( new THREE.Vector3(50,-10,-10),
-                                new THREE.Vector3(50,-10,10),
-                                new THREE.Vector3(50,-10,10));
-        geometry.faces.push(new THREE.Face3(0,1,2));
-        geometry.computeFaceNormals();
-        
-        var material = new THREE.MeshBasicMaterial({ color: 0x4286f4, wireframe: true });
-        mesh = new THREE.Mesh(geometry, material);
-        mesh.position.set(x, y, z);
-        this.add(mesh);
-    }
 
     constructor(x, y, z){
         super();
@@ -133,10 +127,8 @@ class Airplane extends THREE.Object3D{
 
         this.addAirplaneFuselage(0, 0, 0);
 
-        // this.addWing1(0,0,0);
-        // this.addWing2(0,0,0);
-
-        // this.addFrontLine(0,0,0);
+        this.addWingRight(0,0,0);
+        this.addWingLeft(0,0,0);
 
 
     }
