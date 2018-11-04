@@ -2,7 +2,7 @@
 
 var camera, scene, renderer, clock; // variaveis gerais relativas a animacao
 
-var camera1, camera2, camera3, camera4, camera5, camera6, camera7; // diferentes tipos de cameras
+var camera1, camera2, camera3, camera4, camera5, camera6, camera7, camera8; // diferentes tipos de cameras
 
 var geometry, material, mesh;
 
@@ -39,6 +39,7 @@ function createScene() {
     createCamera5();
     createCamera6();
     createCamera7();
+    createCamera8();
 
     camera = camera1;
 
@@ -170,6 +171,7 @@ function createCamera6() {
     camera6.position.z = 0;
 }
 
+
 function createCamera7() {
     'use strict';
     camera7 = new THREE.OrthographicCamera(
@@ -185,6 +187,16 @@ function createCamera7() {
     camera7.position.y = 20;
     camera7.position.z = 40;
 }
+
+
+function createCamera8() {
+    'use strict';
+    camera8 = new THREE.PerspectiveCamera(90,window.innerWidth / window.innerHeight,20,1000);
+    camera8.position.x = 57;
+    camera8.position.y = 57;
+    camera8.position.z = 57;
+}
+
 
 function onKeyDown(e) {
     'use strict';
@@ -225,6 +237,9 @@ function onKeyDown(e) {
         break;
     case 55:    // 7
         camera=camera7;
+        break;
+    case 56:    // 8
+        camera=camera8;
         break;
     case 37:    //LEFT
         left = true;
