@@ -24,24 +24,6 @@ class Airplane extends THREE.Object3D{
         this.add(mesh);
 
 
-        var back = new THREE.Geometry();                    //Parte de baixo da fuselagem
-        c = 0;
-        for(i=-10; i<10; i+=2){
-            back.vertices.push( new THREE.Vector3(-40,0,i),
-                                new THREE.Vector3(-40,20,i),
-                                new THREE.Vector3(-40,0,i+1));
-            back.faces.push(new THREE.Face3(c+1,c,c+2));
-            back.vertices.push( new THREE.Vector3(-40,20,i+1),
-                                new THREE.Vector3(-40,20,i),
-                                new THREE.Vector3(-40,0,i+1));
-            back.faces.push(new THREE.Face3(c+3,c+4,c+5));
-            back.computeFaceNormals();
-            c+=6;
-        }
-        mesh = new THREE.Mesh(back, material);
-        mesh.position.set(x, y, z);
-        this.add(mesh);
-
         // for(i=-10; i<10; i++){
         //     var top = new THREE.Geometry();                     //Parte de cima da fuselagem
         //     top.vertices.push(  new THREE.Vector3(-40,20,-10),
@@ -289,20 +271,20 @@ class Airplane extends THREE.Object3D{
         'use strict';
         var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: true});
         var geometry = new THREE.Geometry();
-        geometry.vertices.push( new THREE.Vector3(-40,20,3),            //Paralelipipedo traseiro
+        geometry.vertices.push( new THREE.Vector3(-40,20,10),            //Paralelipipedo traseiro
                                 new THREE.Vector3(-50,0,3),
-                                new THREE.Vector3(-40,0,3));
+                                new THREE.Vector3(-40,0,10));
         geometry.faces.push(new THREE.Face3(0,1,2));
         geometry.vertices.push( new THREE.Vector3(-50,0,3),
-                                new THREE.Vector3(-40,20,3),
+                                new THREE.Vector3(-40,20,10),
                                 new THREE.Vector3(-50,20,3));
         geometry.faces.push(new THREE.Face3(3,4,5));
-        geometry.vertices.push( new THREE.Vector3(-40,20,-3),
+        geometry.vertices.push( new THREE.Vector3(-40,20,-10),
                                 new THREE.Vector3(-50,0,-3),
-                                new THREE.Vector3(-40,0,-3));
+                                new THREE.Vector3(-40,0,-10));
         geometry.faces.push(new THREE.Face3(7,6,8));
         geometry.vertices.push( new THREE.Vector3(-50,0,-3),
-                                new THREE.Vector3(-40,20,-3),
+                                new THREE.Vector3(-40,20,-10),
                                 new THREE.Vector3(-50,20,-3));
         geometry.faces.push(new THREE.Face3(10,9,11));
         geometry.vertices.push( new THREE.Vector3(-50,20,3),
@@ -314,16 +296,16 @@ class Airplane extends THREE.Object3D{
                                 new THREE.Vector3(-50,0,-3));
         geometry.faces.push(new THREE.Face3(15,16,17));
         geometry.vertices.push( new THREE.Vector3(-50,0,-3),
-                                new THREE.Vector3(-40,0,-3),
-                                new THREE.Vector3(-40,0,3));
+                                new THREE.Vector3(-40,0,-10),
+                                new THREE.Vector3(-40,0,10));
         geometry.faces.push(new THREE.Face3(18,19,20));
         geometry.vertices.push( new THREE.Vector3(-50,0,3),
                                 new THREE.Vector3(-50,0,-3),
-                                new THREE.Vector3(-40,0,3));
+                                new THREE.Vector3(-40,0,10));
         geometry.faces.push(new THREE.Face3(21,22,23));
         geometry.vertices.push( new THREE.Vector3(-50,35,3),            //Parte 1 do estabilizador
                                 new THREE.Vector3(-50,20,3),
-                                new THREE.Vector3(-40,20,3));
+                                new THREE.Vector3(-40,20,10));
         geometry.faces.push(new THREE.Face3(24,25,26));
         geometry.vertices.push( new THREE.Vector3(-50,35,3),
                                 new THREE.Vector3(-53,35,3),
@@ -331,35 +313,35 @@ class Airplane extends THREE.Object3D{
         geometry.faces.push(new THREE.Face3(27,28,29));
         geometry.vertices.push( new THREE.Vector3(-50,35,-3),            //Parte 2 do estabilizador
                                 new THREE.Vector3(-50,20,-3),
-                                new THREE.Vector3(-40,20,-3));
+                                new THREE.Vector3(-40,20,-10));
         geometry.faces.push(new THREE.Face3(31,30,32));
         geometry.vertices.push( new THREE.Vector3(-50,35,-3),
                                 new THREE.Vector3(-53,35,-3),
                                 new THREE.Vector3(-50,20,-3));
         geometry.faces.push(new THREE.Face3(34,33,35));
-        geometry.vertices.push( new THREE.Vector3(-20,4,-60),           //Ponta do estabilizador
-                                new THREE.Vector3(-25,4,-60),
-                                new THREE.Vector3(-20,2,-60));
+        geometry.vertices.push( new THREE.Vector3(-50,35,-3),           //Ponta do estabilizador
+                                new THREE.Vector3(-53,35,-3),
+                                new THREE.Vector3(-50,35,3));
         geometry.faces.push(new THREE.Face3(36,37,38));
-        geometry.vertices.push( new THREE.Vector3(-25,4,-60),
-                                new THREE.Vector3(-25,2,-60),
-                                new THREE.Vector3(-20,2,-60));
+        geometry.vertices.push( new THREE.Vector3(-53,35,-3),
+                                new THREE.Vector3(-53,35,3),
+                                new THREE.Vector3(-50,35,3));
         geometry.faces.push(new THREE.Face3(39,40,41));
-        geometry.vertices.push( new THREE.Vector3(15,4,-10),            //Lados
-                                new THREE.Vector3(-20,4,-60),
-                                new THREE.Vector3(15,2,-10));
+        geometry.vertices.push( new THREE.Vector3(-40,20,-10),           //Lados
+                                new THREE.Vector3(-50,35,-3),
+                                new THREE.Vector3(-50,35,3));
         geometry.faces.push(new THREE.Face3(42,43,44));
-        geometry.vertices.push( new THREE.Vector3(-20,4,-60),
-                                new THREE.Vector3(-20,2,-60),
-                                new THREE.Vector3(15,2,-10));
+        geometry.vertices.push( new THREE.Vector3(-50,35,3),
+                                new THREE.Vector3(-40,20,10),
+                                new THREE.Vector3(-40,20,-10));
         geometry.faces.push(new THREE.Face3(45,46,47));
-        geometry.vertices.push( new THREE.Vector3(-5,4,-10),
-                                new THREE.Vector3(-5,2,-10),
-                                new THREE.Vector3(-25,4,-60));
+        geometry.vertices.push( new THREE.Vector3(-50,20,3),
+                                new THREE.Vector3(-53,35,3),
+                                new THREE.Vector3(-53,35,-3));
         geometry.faces.push(new THREE.Face3(48,49,50));
-        geometry.vertices.push( new THREE.Vector3(-25,4,-60),
-                                new THREE.Vector3(-5,2,-10),
-                                new THREE.Vector3(-25,2,-60));
+        geometry.vertices.push( new THREE.Vector3(-53,35,-3),
+                                new THREE.Vector3(-50,20,-3),
+                                new THREE.Vector3(-50,20,3));
         geometry.faces.push(new THREE.Face3(51,52,53));
         geometry.computeFaceNormals();
         mesh = new THREE.Mesh(geometry, material);
