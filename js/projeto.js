@@ -32,7 +32,7 @@ function createScene() {
     lights = new Lights(40,20,40);
     cameras = new Cameras();
    
-    camera = camera1;
+    camera = camera8;
 
     scene.add(camera);
     scene.add(airplane);
