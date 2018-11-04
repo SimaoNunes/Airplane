@@ -55,8 +55,8 @@ class Airplane extends THREE.Object3D{
         // }
 
         var top1 = new THREE.Geometry();                     //Parte de cima da fuselagem
-        top1.vertices.push(  new THREE.Vector3(-40,20,-10),
-                            new THREE.Vector3(40,0,10),
+        top1.vertices.push( new THREE.Vector3(40,0,10),
+                            new THREE.Vector3(-40,20,-10),
                             new THREE.Vector3(40,0,-10));
         top1.faces.push(new THREE.Face3(0,2,1));
         top1.computeFaceNormals();
@@ -108,8 +108,8 @@ class Airplane extends THREE.Object3D{
                             new THREE.Vector3(-40,20,10),
                             new THREE.Vector3(-40,0,10));
         side.faces.push(new THREE.Face3(1,0,2));
-        side.vertices.push( new THREE.Vector3(-40,0,-10),
-                            new THREE.Vector3(-40,20,-10),
+        side.vertices.push( 
+                            new THREE.Vector3(-40,20,-10),new THREE.Vector3(-40,0,-10),
                             new THREE.Vector3(-40,0,-10));
         side.faces.push(new THREE.Face3(3,4,5));
         side.computeFaceNormals();
@@ -168,8 +168,8 @@ class Airplane extends THREE.Object3D{
                                 new THREE.Vector3(10,15,-10),
                                 new THREE.Vector3(25,4,-10));
             cockpitFront.faces.push(new THREE.Face3(1,0,2));
-            cockpitFront.vertices.push(  new THREE.Vector3(10,15,10),
-                                new THREE.Vector3(25,4,-10),
+            cockpitFront.vertices.push( new THREE.Vector3(25,4,-10),
+                                new THREE.Vector3(10,15,10),
                                 new THREE.Vector3(25,4,10));
             cockpitFront.faces.push(new THREE.Face3(3,4,5));
             cockpitFront.computeFaceNormals();
