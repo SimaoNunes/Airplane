@@ -2,7 +2,7 @@ class Airplane extends THREE.Object3D{
     
     addAirplaneFuselage(x,y,z) {
         'use strict';
-        var material = new THREE.MeshDepthMaterial({color: 0xffffff, wireframe: true });
+        var material = new THREE.MeshBasicMaterial({color: 0x6286f4, wireframe:  true });
         var i;
         var c = 0;
 
@@ -10,11 +10,11 @@ class Airplane extends THREE.Object3D{
         for(i=-40; i<40; i+=2){
             bottom.vertices.push(   new THREE.Vector3(i,0,10),
                                     new THREE.Vector3(i,0,-10),
-                                    new THREE.Vector3(i+2,0,-10));
+                                    new THREE.Vector3(i+1,0,-10));
             bottom.faces.push(new THREE.Face3(c,c+1,c+2));
             bottom.vertices.push(   new THREE.Vector3(i,0,10),
-                                    new THREE.Vector3(i+2,0,-10),
-                                    new THREE.Vector3(i+2,0,10));
+                                    new THREE.Vector3(i+1,0,-10),
+                                    new THREE.Vector3(i+1,0,10));
             bottom.faces.push(new THREE.Face3(c+3,c+4,c+5));
             bottom.computeFaceNormals();
             c+=6;
@@ -29,11 +29,11 @@ class Airplane extends THREE.Object3D{
         for(i=-10; i<10; i+=2){
             back.vertices.push( new THREE.Vector3(-40,0,i),
                                 new THREE.Vector3(-40,20,i),
-                                new THREE.Vector3(-40,0,i+2));
+                                new THREE.Vector3(-40,0,i+1));
             back.faces.push(new THREE.Face3(c+1,c,c+2));
-            back.vertices.push( new THREE.Vector3(-40,20,i+2),
+            back.vertices.push( new THREE.Vector3(-40,20,i+1),
                                 new THREE.Vector3(-40,20,i),
-                                new THREE.Vector3(-40,0,i+2));
+                                new THREE.Vector3(-40,0,i+1));
             back.faces.push(new THREE.Face3(c+3,c+4,c+5));
             back.computeFaceNormals();
             c+=6;
@@ -58,27 +58,28 @@ class Airplane extends THREE.Object3D{
         this.add(mesh);
         
 
-        var side = new THREE.Geometry();                        //Lados da fuselagem
-        side.vertices.push( new THREE.Vector3(-40,0,10),
-                            new THREE.Vector3(-40,20,10),
-                            new THREE.Vector3(40,0,10));
-        side.faces.push(new THREE.Face3(1,0,2));
-        side.vertices.push( new THREE.Vector3(-40,0,-10),
-                            new THREE.Vector3(-40,20,-10),
-                            new THREE.Vector3(40,0,-10));
-        side.faces.push(new THREE.Face3(3,4,5));
-        side.computeFaceNormals();
-        mesh = new THREE.Mesh(side, material);
-        mesh.position.set(x, y, z);
-        this.add(mesh);
-
+        for(i=-40; i<40; i+=2){
+            var side = new THREE.Geometry();
+            side.vertices.push( new THREE.Vector3(-40,0,10),
+                                new THREE.Vector3(-40,20,10),
+                                new THREE.Vector3(i,0,10));
+            side.faces.push(new THREE.Face3(1,0,2));
+            side.vertices.push( new THREE.Vector3(-40,0,-10),
+                                new THREE.Vector3(-40,20,-10),
+                                new THREE.Vector3(i,0,-10));
+            side.faces.push(new THREE.Face3(3,4,5));
+            side.computeFaceNormals();
+            mesh = new THREE.Mesh(side, material);
+            mesh.position.set(x, y, z);
+            this.add(mesh);
+        }
 
     }
 
 
     addWingRight(x,y,z){
         'use strict';
-        var material = new THREE.MeshDepthMaterial({ color: 0x6286f4, wireframe: true });
+        var material = new THREE.MeshBasicMaterial({ color: 0x6286f4, wireframe: false });
         var geometry = new THREE.Geometry();
         geometry.vertices.push( new THREE.Vector3(15,4,10),          //Asa de cima
                                 new THREE.Vector3(-5,4,10),
@@ -126,7 +127,7 @@ class Airplane extends THREE.Object3D{
 
     addWingLeft(x,y,z){
         'use strict';
-        var material = new THREE.MeshDepthMaterial({ color: 0x6286f4, wireframe: true });
+        var material = new THREE.MeshBasicMaterial({ color: 0x6286f4, wireframe: false });
         var geometry = new THREE.Geometry();
         geometry.vertices.push( new THREE.Vector3(15,4,-10),            //Asa de cima
                                 new THREE.Vector3(-5,4,-10),
