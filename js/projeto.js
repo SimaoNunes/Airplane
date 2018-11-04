@@ -193,21 +193,22 @@ function onKeyDown(e) {
             }
         });
         break;
-    case 49: // 1
+    case 49:    // 1
         camera=camera1;
         break;
-    case 50: // 2
+    case 50:    // 2
         camera=camera2;
         break;
-    case 51: // 3
+    case 51:    // 3
         camera=camera3;
         break;
-    case 52: // 4
+    case 52:    // 4
         camera=camera4;
         break;
-    case 53: // 5
+    case 53:    // 5
         camera=camera5;
         break;
+<<<<<<< HEAD
     case 54:
         camera=camera6;
         break;
@@ -216,17 +217,23 @@ function onKeyDown(e) {
         break;
     case 37:
         airplane.rotation.x -= 0.1;
+=======
+    case 54:    //6
+        camera=camera6;
+>>>>>>> cef768c396c7bf789d9435f9e186d2eb4d741f2f
         break;
-    case 39: 
-        airplane.rotation.x += 0.1;
+    case 37:    //LEFT
+        airplane.rotation.y += 0.1;
         break;
-    case 38:
-        airplane.rotation.z +=0.1;
+    case 39:    //RIGHT
+        airplane.rotation.y -= 0.1;
+    case 38:    //UP
+        airplane.rotation.z += 0.1;
         break;
-    case 40:
-        airplane.rotation.z -=0.1;
+    case 40:    //DOWN
+        airplane.rotation.z -= 0.1;
         break;
-    case 78:
+    case 78:    //n
         if( light.intensity == 1){
             light.intensity = 0.3;
         }
