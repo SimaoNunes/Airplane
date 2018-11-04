@@ -35,13 +35,13 @@ function createScene() {
 
     camera = camera1;
 
-    var geometry = new THREE.BoxGeometry( 100000, 1, 100000);
-    var material = new THREE.MeshBasicMaterial( {color: 0x2a000} );
-    var ground = new THREE.Mesh( geometry, material );
-    ground.position.x = 0;
-    ground.position.y = 0;
-    ground.position.z = 0;
-    scene.add( ground );
+    // var geometry = new THREE.BoxGeometry( 100000, 1, 100000);
+    // var material = new THREE.MeshBasicMaterial( {color: 0x2a000} );
+    // var ground = new THREE.Mesh( geometry, material );
+    // ground.position.x = 0;
+    // ground.position.y = 0;
+    // ground.position.z = 0;
+    // scene.add( ground );
 
 
     scene.add(camera);
