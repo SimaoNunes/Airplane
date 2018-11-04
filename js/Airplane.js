@@ -86,12 +86,12 @@ class Airplane extends THREE.Object3D{
         var side = new THREE.Geometry();
         side.vertices.push( new THREE.Vector3(-40,0,10),
                             new THREE.Vector3(-40,20,10),
-                            new THREE.Vector3(-40,0,10));
+                            new THREE.Vector3(40,0,10));
         side.faces.push(new THREE.Face3(1,0,2));
         side.vertices.push( 
-                            new THREE.Vector3(-40,20,-10),
                             new THREE.Vector3(-40,0,-10),
-                            new THREE.Vector3(-40,0,-10)
+                            new THREE.Vector3(-40,20,-10),
+                            new THREE.Vector3(40,0,-10)
                         );
         side.faces.push(new THREE.Face3(3,4,5));
         side.computeFaceNormals();
@@ -121,7 +121,7 @@ class Airplane extends THREE.Object3D{
                             new THREE.Vector3(10,15,-10),
                             new THREE.Vector3(10,7,-10)
                         );
-        cockpitBack.faces.push(new THREE.Face3(1,0,2));
+        cockpitBack.faces.push(new THREE.Face3(2,0,1));
         cockpitBack.vertices.push(  
                             new THREE.Vector3(10,15,10),
                             new THREE.Vector3(10,7,10),
