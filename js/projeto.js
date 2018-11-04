@@ -2,7 +2,7 @@
 
 var camera, scene, renderer, clock; // variaveis gerais relativas a animacao
 
-var camera1, camera2, camera3, camera4, camera5, camera6; // diferentes tipos de cameras
+var camera1, camera2, camera3, camera4, camera5, camera6, camera7; // diferentes tipos de cameras
 
 var geometry, material, mesh;
 
@@ -32,6 +32,7 @@ function createScene() {
     createCamera4();
     createCamera5();
     createCamera6();
+    createCamera7();
 
     camera = camera1;
 
@@ -157,6 +158,22 @@ function createCamera6() {
     camera6.position.z = 0;
 }
 
+function createCamera7() {
+    'use strict';
+    camera7 = new THREE.OrthographicCamera(
+        window.innerWidth / - 10,
+        window.innerWidth/ 10,
+        (window.innerHeight / 10) + 40,
+        (window.innerHeight / - 10) + 40,
+        -1000,
+        1000
+    );
+    
+    camera7.position.x = 60;
+    camera7.position.y = 20;
+    camera7.position.z = 40;
+}
+
 function onKeyDown(e) {
     'use strict';
     switch (e.keyCode) {
@@ -192,8 +209,10 @@ function onKeyDown(e) {
         camera=camera5;
         break;
     case 54:
-    camera=camera6;
-
+        camera=camera6;
+        break;
+    case 55:
+        camera=camera7;
         break;
     case 37:
         airplane.rotation.x -= 0.1;
