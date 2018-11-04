@@ -6,7 +6,12 @@ var camera1, camera2, camera3, camera4, camera5, camera6, camera7; // diferentes
 
 var geometry, material, mesh;
 
-var airplane, lights, sun, light; // diferentes objetos a desenhar
+var airplane, lights; // diferentes objetos a desenhar
+
+var sun, light;
+
+var up, down, left, right;  //flags a ser utilizadas na rotacao do aviao
+
 
 
 function onResize() {
@@ -17,6 +22,7 @@ function onResize() {
         camera.updateProjectionMatrix();
     }
 }
+
 
 function createScene() {
     'use strict';
@@ -62,6 +68,7 @@ function createScene() {
 
 }
 
+
 function createCamera1() {
     'use strict';
     camera1 = new THREE.OrthographicCamera(
@@ -77,6 +84,7 @@ function createCamera1() {
     camera1.position.y = 0;
     camera1.position.z = 40;
 }
+
 
 function createCamera2() {
     'use strict';
@@ -94,6 +102,7 @@ function createCamera2() {
     camera2.position.z = 40;
 }
 
+
 function createCamera3() {
     'use strict';
     camera3 = new THREE.OrthographicCamera(
@@ -109,6 +118,7 @@ function createCamera3() {
     camera3.position.y = 0;
     camera3.position.z = 0;
 }
+
 
 function createCamera4() {
     'use strict';
@@ -126,6 +136,7 @@ function createCamera4() {
     camera4.position.z = 40;
 }
 
+
 function createCamera5() {
     'use strict';
     camera5 = new THREE.OrthographicCamera(
@@ -141,6 +152,7 @@ function createCamera5() {
     camera5.position.y = 20;
     camera5.position.z = 0;
 }
+
 
 function createCamera6() {
     'use strict';
@@ -208,30 +220,23 @@ function onKeyDown(e) {
     case 53:    // 5
         camera=camera5;
         break;
-<<<<<<< HEAD
-    case 54:
+    case 54:    // 6
         camera=camera6;
         break;
-    case 55:
+    case 55:    // 7
         camera=camera7;
         break;
-    case 37:
-        airplane.rotation.x -= 0.1;
-=======
-    case 54:    //6
-        camera=camera6;
->>>>>>> cef768c396c7bf789d9435f9e186d2eb4d741f2f
-        break;
     case 37:    //LEFT
-        airplane.rotation.y += 0.1;
+        left = true;
         break;
     case 39:    //RIGHT
-        airplane.rotation.y -= 0.1;
+        right = true;
+        break;
     case 38:    //UP
-        airplane.rotation.z += 0.1;
+        up = true;
         break;
     case 40:    //DOWN
-        airplane.rotation.z -= 0.1;
+        down = true;
         break;
     case 78:    //n
         if( light.intensity == 1){
@@ -244,13 +249,39 @@ function onKeyDown(e) {
     }
 }
 
+
+function onKeyUp(e) {
+    'use strict';
+    switch (e.keyCode) {
+    case 37:    //LEFT
+        left = false;
+        break;
+    case 39:    //RIGHT
+        right = false;
+        break;
+    case 38:    //UP
+        up = false;
+        break;
+    case 40:    //DOWN
+        down = false;
+        break;
+    }
+}
+
+
 function render() {
     'use strict';
     renderer.render(scene, camera);
 }
 
+
 function init() {
     'use strict';
+
+    up = 0;
+    down = 0;
+    left = 0;
+    right = 0;
 
     renderer = new THREE.WebGLRenderer({
         antialias: true
@@ -264,10 +295,25 @@ function init() {
 
     window.addEventListener("resize", onResize);
     window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keyup", onKeyUp);
 }
+
 
 function animate() {
     'use strict';
+
+    if(left){
+        airplane.rotation.y += 0.06;
+    }
+    if(right){
+        airplane.rotation.y -= 0.06;
+    }
+    if(up){
+        airplane.rotation.z -= 0.06;
+    }
+    if(down){
+        airplane.rotation.z += 0.06;
+    }
 
     render();
 
