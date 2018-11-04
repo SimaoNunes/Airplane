@@ -18,6 +18,35 @@ class Lights extends THREE.Object3D{
         this.add( mesh );
     }
 
+    addAmbientLight(){
+        light = new THREE.AmbientLight( 0xffffff , 1); // soft white light
+        scene.add( light );
+    }
+
+    addspotlightmoonlightshawtylookgoodinthemoonlight(x,y,z){
+
+        spotLight1 = new THREE.SpotLight( 0xffffff, 0 );
+        spotLight1.position.set( x, y+63, z );
+        spotLight1.castShadow = true;
+        scene.add( spotLight1 );
+
+        spotLight2 = new THREE.SpotLight( 0xffffff, 0 );
+        spotLight2.position.set( -x, y+63, z );
+        spotLight2.castShadow = true;
+        scene.add( spotLight2 );
+
+        spotLight3 = new THREE.SpotLight( 0xffffff, 0 );
+        spotLight3.position.set( x, y+63, -z );
+        spotLight3.castShadow = true;
+        scene.add( spotLight3 );
+
+        spotLight4 = new THREE.SpotLight( 0xffffff, 0 );
+        spotLight4.position.set( -x, y+63, -z );
+        spotLight4.castShadow = true;
+        scene.add( spotLight4 );
+    }
+    
+
     constructor(x,y,z){
         super();
     
@@ -35,15 +64,7 @@ class Lights extends THREE.Object3D{
         this.addLampHead(-x,y,-z);
         this.addLampBall(-x,y,-z);
 
-        
-        light = new THREE.AmbientLight( 0xffffff , 1); // soft white light
-        scene.add( light );
-
-        var spotLight = new THREE.SpotLight( 0xffffff, 0 );
-        spotLight.position.set( 40, 20+63, 40 );
-
-        spotLight.castShadow = true;
-
-        scene.add( spotLight );
+        this.addAmbientLight();
+        this.addspotlightmoonlightshawtylookgoodinthemoonlight(x,y,z);
     }
 }

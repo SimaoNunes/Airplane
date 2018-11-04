@@ -8,7 +8,7 @@ var geometry, material, mesh;
 
 var airplane, lights; // diferentes objetos a desenhar
 
-var sun, light;
+var sun, light, spotLight1, spotLight2, spotLight3, spotLight4;
 
 var up, down, left, right;  //flags a ser utilizadas na rotacao do aviao
 
@@ -177,33 +177,32 @@ function onKeyDown(e) {
             }
         });
         break;
-    case 69:  //E
-    case 101: //e
+    case 101: //E
         scene.traverse(function (node) {
             if (node instanceof THREE.AxisHelper) {
                 node.visible = !node.visible;
             }
         });
         break;
-    case 49:    // 1
+    case 81:    // Q
         camera=camera1;
         break;
-    case 50:    // 2
+    case 87:    // W
         camera=camera2;
         break;
-    case 51:    // 3
+    case 69:    // E
         camera=camera3;
         break;
-    case 52:    // 4
+    case 82:    // R
         camera=camera4;
         break;
-    case 53:    // 5
+    case 84:    // T
         camera=camera5;
         break;
-    case 54:    // 6
+    case 89:    // Y
         camera=camera6;
         break;
-    case 55:    // 7
+    case 85:    // U
         camera=camera7;
         break;
     case 37:    //LEFT
@@ -221,10 +220,37 @@ function onKeyDown(e) {
     case 78:    //n
         if( light.intensity == 1){
             light.intensity = 0.3;
+            break;
         }
-        else{
-            light.intensity = 1;
+        light.intensity = 1;
+        break;
+    case 49:
+        if( spotLight1.intensity == 1){
+            spotLight1.intensity = 0;
+            break;
         }
+        spotLight1.intensity = 1;
+        break;
+    case 50:
+        if( spotLight2.intensity == 1){
+            spotLight2.intensity = 0;
+            break;
+        }
+        spotLight2.intensity = 1;
+        break;
+    case 51:
+        if( spotLight3.intensity == 1){
+            spotLight3.intensity = 0;
+            break;
+        }
+        spotLight3.intensity = 1;
+        break;
+    case 52:
+        if( spotLight4.intensity == 1){
+            spotLight4.intensity = 0;
+            break;
+        }
+        spotLight4.intensity = 1;
         break;
     }
 }
