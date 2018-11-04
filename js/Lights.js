@@ -34,5 +34,16 @@ class Lights extends THREE.Object3D{
         
         this.addLampHead(-x,y,-z);
         this.addLampBall(-x,y,-z);
+
+        
+        light = new THREE.AmbientLight( 0xffffff , 1); // soft white light
+        scene.add( light );
+
+        var spotLight = new THREE.SpotLight( 0xffffff, 0 );
+        spotLight.position.set( 40, 20+63, 40 );
+
+        spotLight.castShadow = true;
+
+        scene.add( spotLight );
     }
 }
