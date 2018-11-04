@@ -6,23 +6,16 @@ class Airplane extends THREE.Object3D{
         var i;
         var c = 0;
 
-        var bottom = new THREE.Geometry();              //Parte de tras da fuselagem
-        for(i=-40; i<40; i+=2){
-            bottom.vertices.push(   
-                                    new THREE.Vector3(i,0,10),
-                                    new THREE.Vector3(i,0,-10),
-                                    new THREE.Vector3(i+1,0,-10)
-                                );
-            bottom.faces.push(new THREE.Face3(c,c+1,c+2));
-            bottom.vertices.push(   
-                                    new THREE.Vector3(i,0,10),
-                                    new THREE.Vector3(i+1,0,-10),
-                                    new THREE.Vector3(i+1,0,10)
-                                );
-            bottom.faces.push(new THREE.Face3(c+3,c+4,c+5));
-            bottom.computeFaceNormals();
-            c+=6;
-        }
+        var bottom = new THREE.Geometry();
+        bottom.vertices.push(   new THREE.Vector3(-40,0,10),
+                                new THREE.Vector3(-40,0,-10),
+                                new THREE.Vector3(40,0,-10));
+        bottom.faces.push(new THREE.Face3(0,1,2));
+        bottom.vertices.push(   new THREE.Vector3(-40,0,10),
+                                new THREE.Vector3(40,0,-10),
+                                new THREE.Vector3(40,0,10));
+        bottom.faces.push(new THREE.Face3(3,4,5));
+        bottom.computeFaceNormals();
         mesh = new THREE.Mesh(bottom, material);
         mesh.position.set(x, y, z);
         this.add(mesh);
