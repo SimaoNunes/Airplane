@@ -108,24 +108,6 @@ class Airplane extends THREE.Object3D{
         //     this.add(mesh);
         // }
 
-        var cockpitBack = new THREE.Geometry();
-        cockpitBack.vertices.push( 
-                            new THREE.Vector3(10,15,10),
-                            new THREE.Vector3(10,15,-10),
-                            new THREE.Vector3(10,7,-10)
-                        );
-        cockpitBack.faces.push(new THREE.Face3(2,0,1));
-        cockpitBack.vertices.push(  
-                            new THREE.Vector3(10,15,10),
-                            new THREE.Vector3(10,7,10),
-                            new THREE.Vector3(10,7,-10)
-                        );
-        cockpitBack.faces.push(new THREE.Face3(3,4,5));
-        cockpitBack.computeFaceNormals();
-        mesh = new THREE.Mesh(cockpitBack, material);
-        mesh.position.set(x, y, z);
-        this.add(mesh);
-
         // for(i=-10; i<10; i+=1){
         //     var cockpitFront = new THREE.Geometry();
         //     cockpitFront.vertices.push( new THREE.Vector3(10,15,10),
@@ -142,21 +124,33 @@ class Airplane extends THREE.Object3D{
         //     this.add(mesh);
         // }
 
-        var cockpitFront = new THREE.Geometry();
-            cockpitFront.vertices.push( 
+        var cockpit = new THREE.Geometry();
+            cockpit.vertices.push( 
                                 new THREE.Vector3(10,15,10),
                                 new THREE.Vector3(10,15,-10),
                                 new THREE.Vector3(25,4,-10)
                             );
-            cockpitFront.faces.push(new THREE.Face3(1,0,2));
-            cockpitFront.vertices.push( 
+            cockpit.faces.push(new THREE.Face3(1,0,2));
+            cockpit.vertices.push( 
                                 new THREE.Vector3(25,4,-10),
                                 new THREE.Vector3(10,15,10),
                                 new THREE.Vector3(25,4,10)
                             );
-            cockpitFront.faces.push(new THREE.Face3(3,4,5));
-            cockpitFront.computeFaceNormals();
-            mesh = new THREE.Mesh(cockpitFront, material);
+            cockpit.faces.push(new THREE.Face3(3,4,5));
+            cockpit.vertices.push( 
+                                new THREE.Vector3(10,15,10),
+                                new THREE.Vector3(10,15,-10),
+                                new THREE.Vector3(10,7,-10)
+            );
+            cockpit.faces.push(new THREE.Face3(8,6,7));
+            cockpit.vertices.push(  
+                                new THREE.Vector3(10,15,10),
+                                new THREE.Vector3(10,7,10),
+                                new THREE.Vector3(10,7,-10)
+            );
+            cockpit.faces.push(new THREE.Face3(9,10,11));
+            cockpit.computeFaceNormals();
+            mesh = new THREE.Mesh(cockpit, material);
             mesh.position.set(x, y, z);
             this.add(mesh);
 
