@@ -191,10 +191,10 @@ function createCamera7() {
 
 function createCamera8() {
     'use strict';
-    camera8 = new THREE.PerspectiveCamera(90,window.innerWidth / window.innerHeight,20,1000);
-    camera8.position.x = 57;
-    camera8.position.y = 57;
-    camera8.position.z = 57;
+    camera8 = new THREE.PerspectiveCamera(90,window.innerWidth / window.innerHeight,1,500);
+    camera8.position.x = 60;
+    camera8.position.y = 65;
+    camera8.position.z = 60;
 }
 
 
