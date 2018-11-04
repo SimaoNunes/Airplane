@@ -441,7 +441,9 @@ class Airplane extends THREE.Object3D{
     
         'use strict';
 
-        this.add(new THREE.AxisHelper(30));
+        this.add(new THREE.AxisHelper(60));
+
+        this.children[0].rotateX(-Math.PI/2);
 
         this.addAirplaneFuselage(0, 0, 0);
 
