@@ -84,6 +84,29 @@ class Airplane extends THREE.Object3D{
             this.add(mesh);
         }
 
+
+
+        // cockpit
+        var top = new THREE.Geometry();                     //Parte de cima da fuselagem
+        top.vertices.push(  new THREE.Vector3(10,40,10),
+                            new THREE.Vector3(10,40,-10),
+                            new THREE.Vector3(10,7,-10));
+        top.faces.push(new THREE.Face3(0,2,1));
+        top.computeFaceNormals();
+        mesh = new THREE.Mesh(top, material);
+        mesh.position.set(x, y, z);
+        this.add(mesh);
+        var top = new THREE.Geometry();                     //Parte de cima da fuselagem
+        top.vertices.push(  new THREE.Vector3(10,40,10),
+                            new THREE.Vector3(10,7,10),
+                            new THREE.Vector3(10,7,-10));
+        top.faces.push(new THREE.Face3(0,2,1));
+        top.computeFaceNormals();
+        mesh = new THREE.Mesh(top, material);
+        mesh.position.set(x, y, z);
+        this.add(mesh);
+
+
     }
 
 
