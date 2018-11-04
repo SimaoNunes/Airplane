@@ -6,7 +6,7 @@ var camera1, camera2, camera3, camera4, camera5; // diferentes tipos de cameras
 
 var geometry, material, mesh;
 
-var airplane, lights, sun; // diferentes objetos a desenhar
+var airplane, lights, sun, light; // diferentes objetos a desenhar
 
 
 function onResize() {
@@ -48,7 +48,7 @@ function createScene() {
     scene.add(airplane);
     scene.add(lights)
 
-    var light = new THREE.AmbientLight( 0xffffff , 1); // soft white light
+    light = new THREE.AmbientLight( 0xffffff , 1); // soft white light
     scene.add( light );
 
     // var light = new THREE.PointLight( 0xffffff, 2 , 50); // soft white light
@@ -186,6 +186,14 @@ function onKeyDown(e) {
         break;
     case 40:
         airplane.rotation.z -=0.1;
+        break;
+    case 78:
+        if( light.intensity == 1){
+            light.intensity = 0.3;
+        }
+        else{
+            light.intensity = 1;
+        }
     }
 }
 
