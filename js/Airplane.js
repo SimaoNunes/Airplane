@@ -91,71 +91,6 @@ class Airplane extends THREE.Object3D{
         mesh = new THREE.Mesh(side, material);
         mesh.position.set(x, y, z);
         this.add(mesh);
-
-        // for(i=-10; i<10; i+=1){
-        //     var cockpitBack = new THREE.Geometry();
-        //     cockpitBack.vertices.push( new THREE.Vector3(10,15,10),
-        //                         new THREE.Vector3(10,15,i),
-        //                         new THREE.Vector3(10,7,-10));
-        //     cockpitBack.faces.push(new THREE.Face3(1,0,2));
-        //     cockpitBack.vertices.push(  new THREE.Vector3(10,15,10),
-        //                         new THREE.Vector3(10,7,10),
-        //                         new THREE.Vector3(10,7,i));
-        //     cockpitBack.faces.push(new THREE.Face3(3,4,5));
-        //     cockpitBack.computeFaceNormals();
-        //     mesh = new THREE.Mesh(cockpitBack, material);
-        //     mesh.position.set(x, y, z);
-        //     this.add(mesh);
-        // }
-
-        // for(i=-10; i<10; i+=1){
-        //     var cockpitFront = new THREE.Geometry();
-        //     cockpitFront.vertices.push( new THREE.Vector3(10,15,10),
-        //                         new THREE.Vector3(10,15,i),
-        //                         new THREE.Vector3(25,4,-10));
-        //     cockpitFront.faces.push(new THREE.Face3(1,0,2));
-        //     cockpitFront.vertices.push(  new THREE.Vector3(10,15,10),
-        //                         new THREE.Vector3(25,4,-10),
-        //                         new THREE.Vector3(25,4,i));
-        //     cockpitFront.faces.push(new THREE.Face3(3,4,5));
-        //     cockpitFront.computeFaceNormals();
-        //     mesh = new THREE.Mesh(cockpitFront, material);
-        //     mesh.position.set(x, y, z);
-        //     this.add(mesh);
-        // }
-
-        var cockpit = new THREE.Geometry();
-            cockpit.vertices.push( 
-                                new THREE.Vector3(10,15,10),
-                                new THREE.Vector3(10,15,-10),
-                                new THREE.Vector3(25,4,-10)
-                            );
-            cockpit.faces.push(new THREE.Face3(1,0,2));
-            cockpit.vertices.push( 
-                                new THREE.Vector3(25,4,-10),
-                                new THREE.Vector3(10,15,10),
-                                new THREE.Vector3(25,4,10)
-                            );
-            cockpit.faces.push(new THREE.Face3(3,4,5));
-            cockpit.vertices.push( 
-                                new THREE.Vector3(10,15,10),
-                                new THREE.Vector3(10,15,-10),
-                                new THREE.Vector3(10,7,-10)
-            );
-            cockpit.faces.push(new THREE.Face3(8,6,7));
-            cockpit.vertices.push(  
-                                new THREE.Vector3(10,15,10),
-                                new THREE.Vector3(10,7,10),
-                                new THREE.Vector3(10,7,-10)
-            );
-            cockpit.faces.push(new THREE.Face3(9,10,11));
-            cockpit.computeFaceNormals();
-            mesh = new THREE.Mesh(cockpit, material);
-            mesh.position.set(x, y, z);
-            this.add(mesh);
-
-
-
     }
 
 
@@ -267,35 +202,35 @@ class Airplane extends THREE.Object3D{
         var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: true});
         var geometry = new THREE.Geometry();
         geometry.vertices.push( new THREE.Vector3(-40,20,10),            //Paralelipipedo traseiro
-                                new THREE.Vector3(-50,0,3),
+                                new THREE.Vector3(-50,4,3),
                                 new THREE.Vector3(-40,0,10));
         geometry.faces.push(new THREE.Face3(0,1,2));
-        geometry.vertices.push( new THREE.Vector3(-50,0,3),
+        geometry.vertices.push( new THREE.Vector3(-50,4,3),
                                 new THREE.Vector3(-40,20,10),
                                 new THREE.Vector3(-50,20,3));
         geometry.faces.push(new THREE.Face3(3,4,5));
         geometry.vertices.push( new THREE.Vector3(-40,20,-10),
-                                new THREE.Vector3(-50,0,-3),
+                                new THREE.Vector3(-50,4,-3),
                                 new THREE.Vector3(-40,0,-10));
         geometry.faces.push(new THREE.Face3(7,6,8));
-        geometry.vertices.push( new THREE.Vector3(-50,0,-3),
+        geometry.vertices.push( new THREE.Vector3(-50,4,-3),
                                 new THREE.Vector3(-40,20,-10),
                                 new THREE.Vector3(-50,20,-3));
         geometry.faces.push(new THREE.Face3(10,9,11));
         geometry.vertices.push( new THREE.Vector3(-50,20,3),
-                                new THREE.Vector3(-50,0,-3),
-                                new THREE.Vector3(-50,0,3));
+                                new THREE.Vector3(-50,4,-3),
+                                new THREE.Vector3(-50,4,3));
         geometry.faces.push(new THREE.Face3(12,13,14));
         geometry.vertices.push( new THREE.Vector3(-50,20,3),
                                 new THREE.Vector3(-50,20,-3),
-                                new THREE.Vector3(-50,0,-3));
+                                new THREE.Vector3(-50,4,-3));
         geometry.faces.push(new THREE.Face3(15,16,17));
-        geometry.vertices.push( new THREE.Vector3(-50,0,-3),
+        geometry.vertices.push( new THREE.Vector3(-50,4,-3),
                                 new THREE.Vector3(-40,0,-10),
                                 new THREE.Vector3(-40,0,10));
         geometry.faces.push(new THREE.Face3(18,19,20));
-        geometry.vertices.push( new THREE.Vector3(-50,0,3),
-                                new THREE.Vector3(-50,0,-3),
+        geometry.vertices.push( new THREE.Vector3(-50,4,3),
+                                new THREE.Vector3(-50,4,-3),
                                 new THREE.Vector3(-40,0,10));
         geometry.faces.push(new THREE.Face3(21,22,23));
         geometry.vertices.push( new THREE.Vector3(-50,35,3),            //Parte 1 do estabilizador
