@@ -96,7 +96,7 @@ function onKeyDown(e) {
         break;
     case 78:    //n
         if( light.intensity == 1){
-            light.intensity = 0.3;
+            light.intensity = 0.2;
             break;
         }
         light.intensity = 1;
