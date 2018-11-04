@@ -2,37 +2,34 @@ class Airplane extends THREE.Object3D{
     
     addAirplaneFuselage(x,y,z) {
         'use strict';
-        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: true});
-        var i;
-        var c = 0;
-
-        var fuselage = new THREE.Geometry();
-        fuselage.vertices.push(   new THREE.Vector3(-40,0,10),        //Parte de baixo da fuselagem
+        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: false});
+        var geometry = new THREE.Geometry();
+        geometry.vertices.push(   new THREE.Vector3(-40,0,10),        //Parte de baixo da fuselagem
                                 new THREE.Vector3(-40,0,-10),
                                 new THREE.Vector3(40,0,-10));
-        fuselage.faces.push(new THREE.Face3(0,1,2));
-        fuselage.vertices.push(   new THREE.Vector3(-40,0,10),
+        geometry.faces.push(new THREE.Face3(0,1,2));
+        geometry.vertices.push(   new THREE.Vector3(-40,0,10),
                                 new THREE.Vector3(40,0,-10),
                                 new THREE.Vector3(40,0,10));
-        fuselage.faces.push(new THREE.Face3(3,4,5));
-        fuselage.vertices.push(  new THREE.Vector3(40,0,10),     //Parte de cima da fuselagem
+        geometry.faces.push(new THREE.Face3(3,4,5));
+        geometry.vertices.push(  new THREE.Vector3(40,0,10),     //Parte de cima da fuselagem
                             new THREE.Vector3(40,0,-10),
                             new THREE.Vector3(-40,20,-10));
-        fuselage.faces.push(new THREE.Face3(6,7,8)); 
-        fuselage.vertices.push(  new THREE.Vector3(-40,20,-10),
+        geometry.faces.push(new THREE.Face3(6,7,8)); 
+        geometry.vertices.push(  new THREE.Vector3(-40,20,-10),
                             new THREE.Vector3(-40,20,10),
                             new THREE.Vector3(40,0,10));
-        fuselage.faces.push(new THREE.Face3(9,10,11));
-        fuselage.vertices.push( new THREE.Vector3(-40,0,10),    //Lado direito da fuselagem
+        geometry.faces.push(new THREE.Face3(9,10,11));
+        geometry.vertices.push( new THREE.Vector3(-40,0,10),    //Lado direito da fuselagem
                             new THREE.Vector3(-40,20,10),
                             new THREE.Vector3(40,0,10));
-        fuselage.faces.push(new THREE.Face3(13,12,14));            //Lado esquerdo da fuselagem
-        fuselage.vertices.push( new THREE.Vector3(-40,0,-10),
+        geometry.faces.push(new THREE.Face3(13,12,14));            //Lado esquerdo da fuselagem
+        geometry.vertices.push( new THREE.Vector3(-40,0,-10),
                                 new THREE.Vector3(-40,20,-10),
                                 new THREE.Vector3(40,0,-10));
-        fuselage.faces.push(new THREE.Face3(15,16,17));
-        fuselage.computeFaceNormals();
-        mesh = new THREE.Mesh(fuselage, material);
+        geometry.faces.push(new THREE.Face3(15,16,17));
+        geometry.computeFaceNormals();
+        mesh = new THREE.Mesh(geometry, material);
         mesh.position.set(x, y, z);
         this.add(mesh);
     }
@@ -40,7 +37,7 @@ class Airplane extends THREE.Object3D{
 
     addWingRight(x,y,z){
         'use strict';
-        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: true});
+        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: false});
         var geometry = new THREE.Geometry();
         geometry.vertices.push( new THREE.Vector3(15,4,10),          //Asa de cima
                                 new THREE.Vector3(-5,4,10),
@@ -92,7 +89,7 @@ class Airplane extends THREE.Object3D{
 
     addWingLeft(x,y,z){
         'use strict';
-        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: true});
+        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: false});
         var geometry = new THREE.Geometry();
         geometry.vertices.push( new THREE.Vector3(15,4,-10),            //Asa de cima
                                 new THREE.Vector3(-5,4,-10),
@@ -143,7 +140,7 @@ class Airplane extends THREE.Object3D{
 
     addVerticalStabilizer(x,y,z){
         'use strict';
-        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: true});
+        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: false});
         var geometry = new THREE.Geometry();
         geometry.vertices.push( new THREE.Vector3(-40,20,10),            //Paralelipipedo traseiro
                                 new THREE.Vector3(-50,4,3),
@@ -226,7 +223,7 @@ class Airplane extends THREE.Object3D{
 
     addRightStabilizer(x,y,z){
         'use strict';
-        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: true});
+        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: false});
         var geometry = new THREE.Geometry();
         geometry.vertices.push( new THREE.Vector3(-40,12,10),          //Asa de cima
                                 new THREE.Vector3(-50,12,3),
@@ -277,7 +274,7 @@ class Airplane extends THREE.Object3D{
 
     addLeftStabilizer(x,y,z){
         'use strict';
-        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: true});
+        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: false});
         var geometry = new THREE.Geometry();
         geometry.vertices.push( new THREE.Vector3(-40,12,-10),          //Asa de cima
                                 new THREE.Vector3(-50,12,-3),
@@ -328,7 +325,7 @@ class Airplane extends THREE.Object3D{
 
     addCockpit(x,y,z){
         'use strict'
-        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: true});
+        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: false});
         var cockpit = new THREE.Geometry();
         cockpit.vertices.push( new THREE.Vector3(10,15,10),             //Parte de tras
                                 new THREE.Vector3(10,15,-10),

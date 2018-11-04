@@ -8,9 +8,9 @@ var geometry, material, mesh;
 
 var airplane, lights; // diferentes objetos a desenhar
 
-var sun, light, spotLight1, spotLight2, spotLight3, spotLight4;
+var sun, light, spotLight1, spotLight2, spotLight3, spotLight4; // diferentes luzes
 
-var up, down, left, right;  //flags a ser utilizadas na rotacao do aviao
+var up, down, left, right;  // flags a ser utilizadas na rotacao do aviao
 
 
 function onResize() {
@@ -43,15 +43,15 @@ function createScene() {
 function onKeyDown(e) {
     'use strict';
     switch (e.keyCode) {
-    case 65: //A
-    case 97: //a
+    case 65: // A
+    case 97: // a
         scene.traverse(function (node) {
             if (node instanceof THREE.Mesh) {
                 node.material.wireframe = !node.material.wireframe;
             }
         });
         break;
-    case 101: //E
+    case 80: // P
         scene.traverse(function (node) {
             if (node instanceof THREE.AxisHelper) {
                 node.visible = !node.visible;
@@ -94,12 +94,12 @@ function onKeyDown(e) {
     case 40:    //DOWN
         down = true;
         break;
-    case 78:    //n
-        if( light.intensity == 1){
+    case 78:    // N
+        if( light.intensity == 1.5){
             light.intensity = 0.2;
             break;
         }
-        light.intensity = 1;
+        light.intensity = 1.5;
         break;
     case 49:
         if( spotLight1.intensity == 1){
