@@ -52,7 +52,7 @@ class Airplane extends THREE.Object3D{
                             new THREE.Vector3(-40,20,-10),
                             new THREE.Vector3(40,0,10)
                         );
-        top.faces.push(new THREE.Face3(0,2,1));
+        top.faces.push(new THREE.Face3(4,3,5));
         top.computeFaceNormals();
         mesh = new THREE.Mesh(top, material);
         mesh.position.set(x, y, z);
@@ -97,7 +97,7 @@ class Airplane extends THREE.Object3D{
                             new THREE.Vector3(-40,0,-10),
                             new THREE.Vector3(-40,0,-10)
                         );
-        side.faces.push(new THREE.Face3(3,4,5));
+        side.faces.push(new THREE.Face3(4,3,5));
         side.computeFaceNormals();
         mesh = new THREE.Mesh(side, material);
         mesh.position.set(x, y, z);
@@ -125,7 +125,7 @@ class Airplane extends THREE.Object3D{
                             new THREE.Vector3(10,15,-10),
                             new THREE.Vector3(10,7,-10)
                         );
-        cockpitBack.faces.push(new THREE.Face3(1,0,2));
+        cockpitBack.faces.push(new THREE.Face3(2,0,1));
         cockpitBack.vertices.push(  
                             new THREE.Vector3(10,15,10),
                             new THREE.Vector3(10,7,10),
