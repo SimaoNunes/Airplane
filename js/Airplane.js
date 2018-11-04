@@ -461,20 +461,20 @@ class Airplane extends THREE.Object3D{
         cockpit.faces.push(new THREE.Face3(4,3,5));
         cockpit.vertices.push(  new THREE.Vector3(10,15,10),             //Parte da frente
                                 new THREE.Vector3(10,15,-10),
-                                new THREE.Vector3(25,4,-10));
+                                new THREE.Vector3(25,3.5,-10));
         cockpit.faces.push(new THREE.Face3(7,6,8));
-        cockpit.vertices.push(  new THREE.Vector3(25,4,-10),
+        cockpit.vertices.push(  new THREE.Vector3(25,3.5,-10),
                                 new THREE.Vector3(10,15,10),
-                                new THREE.Vector3(25,4,10));
+                                new THREE.Vector3(25,3.5,10));
         cockpit.faces.push(new THREE.Face3(9,10,11));
-        cockpit.vertices.push(  new THREE.Vector3(25,4,-10),
-                                new THREE.Vector3(10,15,10),
-                                new THREE.Vector3(25,4,10));
+        cockpit.vertices.push(  new THREE.Vector3(10,15,10),
+                                new THREE.Vector3(10,7,10),
+                                new THREE.Vector3(25,3.5,10));
         cockpit.faces.push(new THREE.Face3(12,13,14));
-        cockpit.vertices.push(  new THREE.Vector3(25,4,-10),
-                                new THREE.Vector3(10,15,10),
-                                new THREE.Vector3(25,4,10));
-        cockpit.faces.push(new THREE.Face3(15,16,17));
+        cockpit.vertices.push(  new THREE.Vector3(10,15,-10),
+                                new THREE.Vector3(10,7,-10),
+                                new THREE.Vector3(25,3.5,-10));
+        cockpit.faces.push(new THREE.Face3(16,15,17));
         cockpit.computeFaceNormals();
         mesh = new THREE.Mesh(cockpit, material);
         mesh.position.set(x, y, z);
