@@ -40,15 +40,21 @@ class Airplane extends THREE.Object3D{
         //     this.add(mesh);
         // }
 
-        var top1 = new THREE.Geometry();                     //Parte de cima da fuselagem
-        top1.vertices.push( 
+        var top = new THREE.Geometry();                     //Parte de cima da fuselagem
+        top.vertices.push( 
                             new THREE.Vector3(40,0,10),
                             new THREE.Vector3(-40,20,-10),
                             new THREE.Vector3(40,0,-10)
                         );
-        top1.faces.push(new THREE.Face3(0,2,1));
-        top1.computeFaceNormals();
-        mesh = new THREE.Mesh(top1, material);
+        top.faces.push(new THREE.Face3(0,2,1)); 
+        top.vertices.push(  
+                            new THREE.Vector3(-40,20,10),
+                            new THREE.Vector3(-40,20,-10),
+                            new THREE.Vector3(40,0,10)
+                        );
+        top.faces.push(new THREE.Face3(0,2,1));
+        top.computeFaceNormals();
+        mesh = new THREE.Mesh(top, material);
         mesh.position.set(x, y, z);
         this.add(mesh);
         
@@ -63,18 +69,6 @@ class Airplane extends THREE.Object3D{
         //     mesh.position.set(x, y, z);
         //     this.add(mesh);
         // }
-
-        var top2 = new THREE.Geometry();                     //Parte de cima da fuselagem
-        top2.vertices.push(  
-                            new THREE.Vector3(-40,20,10),
-                            new THREE.Vector3(-40,20,-10),
-                            new THREE.Vector3(40,0,10)
-                        );
-        top2.faces.push(new THREE.Face3(0,2,1));
-        top2.computeFaceNormals();
-        mesh = new THREE.Mesh(top2, material);
-        mesh.position.set(x, y, z);
-        this.add(mesh);
 
 
         // for(i=-40; i<40; i+=2){
