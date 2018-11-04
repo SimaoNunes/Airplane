@@ -35,12 +35,28 @@ function createScene() {
 
     camera = camera1;
 
+    var geometry = new THREE.BoxGeometry( 100000, 1, 100000);
+    var material = new THREE.MeshBasicMaterial( {color: 0x2a000} );
+    var ground = new THREE.Mesh( geometry, material );
+    ground.position.x = 0;
+    ground.position.y = 0;
+    ground.position.z = 0;
+    scene.add( ground );
+
+
     scene.add(camera);
     scene.add(airplane);
     scene.add(lights)
 
-    var light = new THREE.AmbientLight( 0xffffff , 0.5); // soft white light
+    var light = new THREE.AmbientLight( 0xffffff , 1); // soft white light
     scene.add( light );
+
+    // var light = new THREE.PointLight( 0xffffff, 2 , 50); // soft white light
+    // scene.add( light );
+
+    // var light = new THREE.SpotLight( 0xffffff, 25); // soft white light
+    // light.position.set(0,1,0);
+    // scene.add( light );
 
 
 }
