@@ -447,6 +447,56 @@ class Airplane extends THREE.Object3D{
     }    
 
 
+    addCockpit(x,y,z){
+        'use strict'
+        var material = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: true});
+        var cockpit = new THREE.Geometry();
+        cockpit.vertices.push( new THREE.Vector3(10,15,10),             //Parte de tras
+                                new THREE.Vector3(10,15,-10),
+                                new THREE.Vector3(10,7,-10));
+        cockpit.faces.push(new THREE.Face3(0,1,2));
+        cockpit.vertices.push(  new THREE.Vector3(10,15,10),
+                                new THREE.Vector3(10,7,10),
+                                new THREE.Vector3(10,7,-10));
+        cockpit.faces.push(new THREE.Face3(4,3,5));
+        cockpit.vertices.push(  new THREE.Vector3(10,15,10),             //Parte da frente
+                                new THREE.Vector3(10,15,-10),
+                                new THREE.Vector3(25,4,-10));
+        cockpit.faces.push(new THREE.Face3(7,6,8));
+        cockpit.vertices.push(  new THREE.Vector3(25,4,-10),
+                                new THREE.Vector3(10,15,10),
+                                new THREE.Vector3(25,4,10));
+        cockpit.faces.push(new THREE.Face3(9,10,11));
+        cockpit.vertices.push(  new THREE.Vector3(25,4,-10),
+                                new THREE.Vector3(10,15,10),
+                                new THREE.Vector3(25,4,10));
+        cockpit.faces.push(new THREE.Face3(12,13,14));
+        cockpit.vertices.push(  new THREE.Vector3(25,4,-10),
+                                new THREE.Vector3(10,15,10),
+                                new THREE.Vector3(25,4,10));
+        cockpit.faces.push(new THREE.Face3(15,16,17));
+        cockpit.computeFaceNormals();
+        mesh = new THREE.Mesh(cockpit, material);
+        mesh.position.set(x, y, z);
+        this.add(mesh);
+
+        // for(i=-10; i<10; i+=1){
+        //     var cockpitFront = new THREE.Geometry();
+        //     cockpitFront.vertices.push( new THREE.Vector3(10,15,10),
+        //                         new THREE.Vector3(10,15,i),
+        //                         new THREE.Vector3(25,4,-10));
+        //     cockpitFront.faces.push(new THREE.Face3(1,0,2));
+        //     cockpitFront.vertices.push(  new THREE.Vector3(10,15,10),
+        //                         new THREE.Vector3(25,4,-10),
+        //                         new THREE.Vector3(25,4,i));
+        //     cockpitFront.faces.push(new THREE.Face3(3,4,5));
+        //     cockpitFront.computeFaceNormals();
+        //     mesh = new THREE.Mesh(cockpitFront, material);
+        //     mesh.position.set(x, y, z);
+        //     this.add(mesh);
+        // }
+
+    }
     constructor(x, y, z){
         super();
 
@@ -465,6 +515,7 @@ class Airplane extends THREE.Object3D{
         this.addVerticalStabilizer(0,0,0);
         this.addRightStabilizer(0,0,0);
         this.addLeftStabilizer(0,0,0);
+        this.addCockpit(0,0,0);
 
 
     }
