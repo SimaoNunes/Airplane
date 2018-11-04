@@ -94,6 +94,9 @@ function onKeyDown(e) {
     case 40:    //DOWN
         down = true;
         break;
+    case 76:    //L
+        down = true;
+        break;
     case 78:    // N
         if( light.intensity == 1.5){
             light.intensity = 0.2;
