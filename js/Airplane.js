@@ -6,89 +6,33 @@ class Airplane extends THREE.Object3D{
         var i;
         var c = 0;
 
-        var bottom = new THREE.Geometry();
-        bottom.vertices.push(   new THREE.Vector3(-40,0,10),
+        var fuselage = new THREE.Geometry();
+        fuselage.vertices.push(   new THREE.Vector3(-40,0,10),        //Parte de baixo da fuselagem
                                 new THREE.Vector3(-40,0,-10),
                                 new THREE.Vector3(40,0,-10));
-        bottom.faces.push(new THREE.Face3(0,1,2));
-        bottom.vertices.push(   new THREE.Vector3(-40,0,10),
+        fuselage.faces.push(new THREE.Face3(0,1,2));
+        fuselage.vertices.push(   new THREE.Vector3(-40,0,10),
                                 new THREE.Vector3(40,0,-10),
                                 new THREE.Vector3(40,0,10));
-        bottom.faces.push(new THREE.Face3(3,4,5));
-        bottom.computeFaceNormals();
-        mesh = new THREE.Mesh(bottom, material);
-        mesh.position.set(x, y, z);
-        this.add(mesh);
-
-
-        // for(i=-10; i<10; i++){
-        //     var top = new THREE.Geometry();                     //Parte de cima da fuselagem
-        //     top.vertices.push(  new THREE.Vector3(-40,20,-10),
-        //                         new THREE.Vector3(-40,20,-10),
-        //                         new THREE.Vector3(40,0,i));
-        //     top.faces.push(new THREE.Face3(0,2,1));
-        //     top.computeFaceNormals();
-        //     mesh = new THREE.Mesh(top, material);
-        //     mesh.position.set(x, y, z);
-        //     this.add(mesh);
-        // }
-
-        var top = new THREE.Geometry();                     //Parte de cima da fuselagem
-        top.vertices.push(  new THREE.Vector3(40,0,10),
+        fuselage.faces.push(new THREE.Face3(3,4,5));
+        fuselage.vertices.push(  new THREE.Vector3(40,0,10),     //Parte de cima da fuselagem
                             new THREE.Vector3(40,0,-10),
                             new THREE.Vector3(-40,20,-10));
-        top.faces.push(new THREE.Face3(0,1,2)); 
-        top.vertices.push(  new THREE.Vector3(-40,20,-10),
+        fuselage.faces.push(new THREE.Face3(6,7,8)); 
+        fuselage.vertices.push(  new THREE.Vector3(-40,20,-10),
                             new THREE.Vector3(-40,20,10),
                             new THREE.Vector3(40,0,10));
-        top.faces.push(new THREE.Face3(3,4,5));
-        top.computeFaceNormals();
-        mesh = new THREE.Mesh(top, material);
-        mesh.position.set(x, y, z);
-        this.add(mesh);
-        
-        // for(i=-10; i<10; i++){
-        //     var top = new THREE.Geometry();                     //Parte de cima da fuselagem
-        //     top.vertices.push(  new THREE.Vector3(-40,20,i),
-        //                         new THREE.Vector3(-40,20,-10),
-        //                         new THREE.Vector3(40,0,10));
-        //     top.faces.push(new THREE.Face3(0,2,1));
-        //     top.computeFaceNormals();
-        //     mesh = new THREE.Mesh(top, material);
-        //     mesh.position.set(x, y, z);
-        //     this.add(mesh);
-        // }
-
-
-        // for(i=-40; i<40; i+=2){
-        //     var side = new THREE.Geometry();
-        //     side.vertices.push( new THREE.Vector3(-40,0,10),
-        //                         new THREE.Vector3(-40,20,10),
-        //                         new THREE.Vector3(i,0,10));
-        //     side.faces.push(new THREE.Face3(1,0,2));
-        //     side.vertices.push( new THREE.Vector3(-40,0,-10),
-        //                         new THREE.Vector3(-40,20,-10),
-        //                         new THREE.Vector3(i,0,-10));
-        //     side.faces.push(new THREE.Face3(3,4,5));
-        //     side.computeFaceNormals();
-        //     mesh = new THREE.Mesh(side, material);
-        //     mesh.position.set(x, y, z);
-        //     this.add(mesh);
-        // }
-
-        var side = new THREE.Geometry();
-        side.vertices.push( new THREE.Vector3(-40,0,10),
+        fuselage.faces.push(new THREE.Face3(9,10,11));
+        fuselage.vertices.push( new THREE.Vector3(-40,0,10),    //Lado direito da fuselagem
                             new THREE.Vector3(-40,20,10),
                             new THREE.Vector3(40,0,10));
-        side.faces.push(new THREE.Face3(1,0,2));
-        side.vertices.push( 
-                            new THREE.Vector3(-40,0,-10),
-                            new THREE.Vector3(-40,20,-10),
-                            new THREE.Vector3(40,0,-10)
-                        );
-        side.faces.push(new THREE.Face3(3,4,5));
-        side.computeFaceNormals();
-        mesh = new THREE.Mesh(side, material);
+        fuselage.faces.push(new THREE.Face3(13,12,14));            //Lado esquerdo da fuselagem
+        fuselage.vertices.push( new THREE.Vector3(-40,0,-10),
+                                new THREE.Vector3(-40,20,-10),
+                                new THREE.Vector3(40,0,-10));
+        fuselage.faces.push(new THREE.Face3(15,16,17));
+        fuselage.computeFaceNormals();
+        mesh = new THREE.Mesh(fuselage, material);
         mesh.position.set(x, y, z);
         this.add(mesh);
     }
@@ -446,7 +390,6 @@ class Airplane extends THREE.Object3D{
         this.children[0].rotateX(-Math.PI/2);
 
         this.addAirplaneFuselage(0, 0, 0);
-
         this.addWingRight(0,0,0);
         this.addWingLeft(0,0,0);
         this.addVerticalStabilizer(0,0,0);
