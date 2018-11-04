@@ -22,7 +22,6 @@ function createScene() {
     'use strict';
 
     scene = new THREE.Scene();
-    scene.add(new THREE.AxisHelper(20));
 
     airplane  = new Airplane(0, 0, 0);
     lights = new Lights(40,20,40);
