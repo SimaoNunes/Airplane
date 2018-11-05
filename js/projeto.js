@@ -4,14 +4,26 @@ var camera, scene, renderer, clock; // variaveis gerais relativas a animacao
 
 var cameras, camera1, camera2, camera3, camera4, camera5, camera6, camera7, camera8; // diferentes tipos de cameras
 
-var geometry, material, mesh;
-
 var airplane, lights; // diferentes objetos a desenhar
 
 var sun, light, spotLight1, spotLight2, spotLight3, spotLight4; // diferentes luzes
 
 var up, down, left, right;  // flags a ser utilizadas na rotacao do aviao
 
+var mesh;
+
+var basicMaterial   = new THREE.MeshBasicMaterial({color: 0x6286f4, wireframe: false});
+var lambertMaterial = new THREE.MeshLambertMaterial({color: 0x6286f4, wireframe: false});
+var phongMaterial   = new THREE.MeshPhongMaterial({color: 0x6286f4, wireframe: false});
+var currentMaterial = lambertMaterial;
+var basicFLAG = false;
+
+
+function applyMaterial(material){
+    for(var i=1; i<8; i++){
+        airplane.children[i].material = material;
+    }
+}
 
 function onResize() {
     'use strict';
@@ -39,6 +51,7 @@ function createScene() {
     scene.add(lights);
 
 }
+
 
 function onKeyDown(e) {
     'use strict';
@@ -94,8 +107,24 @@ function onKeyDown(e) {
     case 40:    //DOWN
         down = true;
         break;
+    case 71:    //G
+        if(currentMaterial == lambertMaterial){
+            console.log('2');
+            currentMaterial = phongMaterial;
+            applyMaterial(currentMaterial);
+            break;
+        }
+        currentMaterial = lambertMaterial;
+        applyMaterial(lambertMaterial);
+        break;
     case 76:    //L
-        down = true;
+        if(basicFLAG){
+            applyMaterial(currentMaterial);
+            basicFLAG = false;
+            break;
+        }
+        applyMaterial(basicMaterial);
+        basicFLAG = true;
         break;
     case 78:    // N
         if( light.intensity == 1.5){
