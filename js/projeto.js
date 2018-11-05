@@ -6,7 +6,7 @@ var cameras, camera1, camera2, camera3, camera4, camera5, camera6, camera7, came
 
 var airplane, lights; // diferentes objetos a desenhar
 
-var sun, light, spotLight1, spotLight2, spotLight3, spotLight4; // diferentes luzes
+var  light, spotLight1, spotLight2, spotLight3, spotLight4; // diferentes luzes
 
 var up, down, left, right;  // flags a ser utilizadas na rotacao do aviao
 
@@ -94,19 +94,19 @@ function onKeyDown(e) {
     case 56:    // 8
         camera=camera8;
         break;
-    case 37:    //LEFT
+    case 37:    // LEFT
         left = true;
         break;
-    case 39:    //RIGHT
+    case 39:    // RIGHT
         right = true;
         break;
-    case 38:    //UP
+    case 38:    // UP
         up = true;
         break;
-    case 40:    //DOWN
+    case 40:    // DOWN
         down = true;
         break;
-    case 71:    //G
+    case 71:    // G
         if(currentMaterial == lambertMaterial){
             currentMaterial = phongMaterial;
             applyMaterial(currentMaterial);
@@ -131,28 +131,28 @@ function onKeyDown(e) {
         }
         light.intensity = 1.5;
         break;
-    case 49:
+    case 49:    // 1
         if( spotLight1.intensity == 1){
             spotLight1.intensity = 0;
             break;
         }
         spotLight1.intensity = 1;
         break;
-    case 50:
+    case 50:    // 2
         if( spotLight2.intensity == 1){
             spotLight2.intensity = 0;
             break;
         }
         spotLight2.intensity = 1;
         break;
-    case 51:
+    case 51:    // 3
         if( spotLight3.intensity == 1){
             spotLight3.intensity = 0;
             break;
         }
         spotLight3.intensity = 1;
         break;
-    case 52:
+    case 52:    // 4
         if( spotLight4.intensity == 1){
             spotLight4.intensity = 0;
             break;

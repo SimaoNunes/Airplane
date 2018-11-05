@@ -279,43 +279,43 @@ class Airplane extends THREE.Object3D{
         geometry.vertices.push( new THREE.Vector3(-40,12,-10),          //Asa de cima
                                 new THREE.Vector3(-50,12,-3),
                                 new THREE.Vector3(-50,12,-20));
-        geometry.faces.push(new THREE.Face3(0,1,2));
+        geometry.faces.push(new THREE.Face3(1,0,2));
         geometry.vertices.push( new THREE.Vector3(-50,12,-3),
                                 new THREE.Vector3(-53,12,-20),
                                 new THREE.Vector3(-50,12,-20));
-        geometry.faces.push(new THREE.Face3(3,4,5));
+        geometry.faces.push(new THREE.Face3(4,3,5));
         geometry.vertices.push( new THREE.Vector3(-40,8,-10),             //Asa de baixo
                                 new THREE.Vector3(-50,8,-3),
                                 new THREE.Vector3(-50,8,-20));
-        geometry.faces.push(new THREE.Face3(7,6,8));
+        geometry.faces.push(new THREE.Face3(6,7,8));
         geometry.vertices.push( new THREE.Vector3(-50,8,-3),
                                 new THREE.Vector3(-53,8,-20),
                                 new THREE.Vector3(-50,8,-20));
-        geometry.faces.push(new THREE.Face3(10,9,11));
+        geometry.faces.push(new THREE.Face3(9,10,11));
         geometry.vertices.push( new THREE.Vector3(-50,12,-20),            //Ponta da asa
                                 new THREE.Vector3(-53,12,-20),
                                 new THREE.Vector3(-50,8,-20));
-        geometry.faces.push(new THREE.Face3(12,13,14));
+        geometry.faces.push(new THREE.Face3(13,12,14));
         geometry.vertices.push( new THREE.Vector3(-53,12,-20),
                                 new THREE.Vector3(-53,8,-20),
                                 new THREE.Vector3(-50,8,-20));
-        geometry.faces.push(new THREE.Face3(15,16,17));
+        geometry.faces.push(new THREE.Face3(16,15,17));
         geometry.vertices.push( new THREE.Vector3(-40,12,-10),             //Lados
                                 new THREE.Vector3(-50,8,-20),
                                 new THREE.Vector3(-40,8,-10));
-        geometry.faces.push(new THREE.Face3(18,19,20));
+        geometry.faces.push(new THREE.Face3(19,18,20));
         geometry.vertices.push( new THREE.Vector3(-40,12,-10),
                                 new THREE.Vector3(-50,12,-20),
                                 new THREE.Vector3(-50,8,-20));
-        geometry.faces.push(new THREE.Face3(21,22,23));
+        geometry.faces.push(new THREE.Face3(22,21,23));
         geometry.vertices.push( new THREE.Vector3(-53,12,-20),
                                 new THREE.Vector3(-50,12,-3),
                                 new THREE.Vector3(-50,8,-3));
-        geometry.faces.push(new THREE.Face3(24,25,26));
+        geometry.faces.push(new THREE.Face3(25,24,26));
         geometry.vertices.push( new THREE.Vector3(-53,12,-20),
                                 new THREE.Vector3(-50,8,-3),
                                 new THREE.Vector3(-53,8,-20));
-        geometry.faces.push(new THREE.Face3(27,28,29));
+        geometry.faces.push(new THREE.Face3(28,27,29));
         geometry.computeFaceNormals();
         mesh = new THREE.Mesh(geometry, material);
         mesh.position.set(x, y, z);
@@ -379,9 +379,5 @@ class Airplane extends THREE.Object3D{
         this.addRightStabilizer(0,0,0);
         this.addLeftStabilizer(0,0,0);
         this.addCockpit(0,0,0);
-
-        console.log(this);
-
-
     }
 }
