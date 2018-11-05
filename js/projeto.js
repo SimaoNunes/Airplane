@@ -34,7 +34,6 @@ function onResize() {
     }
 }
 
-
 function createScene() {
     'use strict';
 
@@ -109,7 +108,6 @@ function onKeyDown(e) {
         break;
     case 71:    //G
         if(currentMaterial == lambertMaterial){
-            console.log('2');
             currentMaterial = phongMaterial;
             applyMaterial(currentMaterial);
             break;
