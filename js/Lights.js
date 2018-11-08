@@ -31,36 +31,36 @@ class Lights extends THREE.Object3D{
         spotLight1.castShadow = true;
         scene.add(spotLight1);
         scene.add(spotLight1.target);
-        spotLight1.target.position.x = x;
-        spotLight1.target.position.y = y;
-        spotLight1.target.position.z = z;
+        spotLight1.target.position.x = 0;
+        spotLight1.target.position.y = 0;
+        spotLight1.target.position.z = 0;
 
         spotLight2 = new THREE.SpotLight(0xffffff, 0 );
         spotLight2.position.set(-x, y+63, z);
         spotLight2.castShadow = true;
         scene.add(spotLight2);
         scene.add(spotLight2.target);
-        spotLight2.target.position.x = -x;
-        spotLight2.target.position.y = y;
-        spotLight2.target.position.z = z;
+        spotLight2.target.position.x = 0;
+        spotLight2.target.position.y = 0;
+        spotLight2.target.position.z = 0;
 
         spotLight3 = new THREE.SpotLight(0xffffff, 0 );
         spotLight3.position.set(x, y+63, -z);
         spotLight3.castShadow = true;
         scene.add(spotLight3);
         scene.add(spotLight3.target);
-        spotLight3.target.position.x = x;
-        spotLight3.target.position.y = y;
-        spotLight3.target.position.z = -z;
+        spotLight3.target.position.x = 0;
+        spotLight3.target.position.y = 0;
+        spotLight3.target.position.z = 0;
 
         spotLight4 = new THREE.SpotLight(0xffffff, 0 );
         spotLight4.position.set(-x, y+63, -z);
         spotLight4.castShadow = true;
         scene.add(spotLight4);
         scene.add(spotLight4.target);
-        spotLight4.target.position.x = -x;
-        spotLight4.target.position.y = y;
-        spotLight4.target.position.z = -z;
+        spotLight4.target.position.x = 0;
+        spotLight4.target.position.y = 0;
+        spotLight4.target.position.z = 0;
     }
     
 

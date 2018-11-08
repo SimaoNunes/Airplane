@@ -214,46 +214,31 @@ function init() {
 
 function animate() {
     'use strict';
+    var p;
 
     if(left){
         airplane.children[0].rotateZ(0.06);
-        airplane.children[1].rotateY(0.06);
-        airplane.children[2].rotateY(0.06);
-        airplane.children[3].rotateY(0.06);
-        airplane.children[4].rotateY(0.06);
-        airplane.children[5].rotateY(0.06);
-        airplane.children[6].rotateY(0.06);
-        airplane.children[7].rotateY(0.06);
+        for(p=1; p<8; p++){
+            airplane.children[p].rotateY(0.06);
+        }
     }
     if(right){
         airplane.children[0].rotateZ(-0.06);
-        airplane.children[1].rotateY(-0.06);
-        airplane.children[2].rotateY(-0.06);
-        airplane.children[3].rotateY(-0.06);
-        airplane.children[4].rotateY(-0.06);
-        airplane.children[5].rotateY(-0.06);
-        airplane.children[6].rotateY(-0.06);
-        airplane.children[7].rotateY(-0.06);
+        for(p=1; p<8; p++){
+            airplane.children[p].rotateY(-0.06);
+        }
     }
     if(up){
         airplane.children[0].rotateY(0.06);
-        airplane.children[1].rotateZ(-0.06);
-        airplane.children[2].rotateZ(-0.06);
-        airplane.children[3].rotateZ(-0.06);
-        airplane.children[4].rotateZ(-0.06);
-        airplane.children[5].rotateZ(-0.06);
-        airplane.children[6].rotateZ(-0.06);
-        airplane.children[7].rotateZ(-0.06);
+        for(p=1; p<8; p++){
+            airplane.children[p].rotateZ(-0.06);
+        }
     }
     if(down){
         airplane.children[0].rotateY(-0.06);
-        airplane.children[1].rotateZ(0.06);
-        airplane.children[2].rotateZ(0.06);
-        airplane.children[3].rotateZ(0.06);
-        airplane.children[4].rotateZ(0.06);
-        airplane.children[5].rotateZ(0.06);
-        airplane.children[6].rotateZ(0.06);
-        airplane.children[7].rotateZ(0.06);
+        for(p=1; p<8; p++){
+            airplane.children[p].rotateZ(0.06);
+        }
     }
 
     render();
