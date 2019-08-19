@@ -1,6 +1,6 @@
 # Airplane
 
-Source code of [this](http://web.tecnico.ulisboa.pt/~ist186512/projects/airplane/) university project from the Computer Graphics class. 
+Source code of [this](http://web.tecnico.ulisboa.pt/~ist186512/projects/airplane/) university project from Computer Graphics class. 
 
 ## Start the animation
 
